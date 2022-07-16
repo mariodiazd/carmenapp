@@ -114,5 +114,8 @@
       }
     }
   },
-  "defaultProject": "carmenapp"
+  "defaultProject": "carmenapp",
+  "cli": {
+    "analytics": "55e519d0-9e99-48d7-bb82-9edea876ccb1"
+  }
 }
