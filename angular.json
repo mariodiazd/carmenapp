@@ -5,7 +5,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "regalo-paula": {
+    "carmneapp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -105,7 +105,7 @@
       }
     }
   },
-  "defaultProject": "regalo-paula",
+  "defaultProject": "carmenapp",
   "cli": {
     "analytics": "16fb36e3-6692-4fba-b5ad-b6c355b3fc54"
   }
