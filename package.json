@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lite": "lite-server",
-    "preinstall": "npm install --force",
+    "heroku-prebuild":"npm install --force",
     "heroku-postbuild": "ng build --prod"
   },
   "engines": {
