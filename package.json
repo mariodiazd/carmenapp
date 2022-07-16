@@ -6,12 +6,13 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
-  "scripts": {
+    "test": "ng test",
+    "heroku-postbuild": "ng build",
     "postinstall": "ng build",
-    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript"
+    "preinstall": "npm install"
+
   },
+
   "engines": {
     "node": "16.15.0",
     "npm": "8.5.5"
