@@ -1,0 +1,60 @@
+<div style="background-color: whitesmoke; height: 100%;">
+  <div class="text-center" style="margin: 10px; padding: 5px;">
+    <h1 class="mt-4" style="font-weight: 700;">¡¡COMIENZA LA BATALLA!!</h1>
+    </div>
+    <div class="row">
+        <div class="col md-12">
+    <div class="row">
+      <div class="col-6 text-center">
+        <strong>Vivos/Kills/Vidas</strong>
+        <div *ngFor="let part of participantes;  let i = index">
+          <span>{{part.name}} <strong>/ {{part.kills}}/ {{part.vidas}}</strong></span>
+        </div>
+
+      </div>
+      <div class="col-6 text-center">
+        <strong>Muertos/kills</strong>
+        <div *ngFor="let part of muertos;  let i = index">
+          <span>{{part.name}}<strong> / {{part.kills}}</strong></span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button  (click)="jugar()" style="background-color: black;color:white;font-weight: 600;border: none;padding: 10px; margin: 5px; border-radius: 5px;">A VER QUE PASA</button>
+    </div>
+
+        </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div style="max-height: 500px; overflow-y: scroll;">
+            <div  class="mt-2" *ngFor="let item of feed;  let i = index" style="border-radius: 10px; width: 100%; height: 150px;" [style.background]="item.color">
+              <div class="row" style="padding: 10px;">
+                <div class=" col-md-4 col-3" >
+                  <div class="row"><img height="80" src="\assets\img\{{item.player1.img}}"></div>
+                  <div class="row">  <span class="text-center" style="text-align: center;">{{item.player1.name}}</span></div>
+
+
+                </div>
+                <div class="col-md-6 col-6" >
+                  <div class="row">  <strong style="font-size: small; text-align: center; font-size: medium;">{{item.accion.descripcion}}</strong></div>
+
+                </div>
+                <div class="col-md-4 col-3" >
+                  <div *ngIf="item.player2.name != 'nadie'" class="row"><img height="80" src="\assets\img\{{item.player2.img}}"></div>
+                  <div *ngIf="item.player2.name != 'nadie'" class="row">  <span class="text-center" style="text-align: center;">{{item.player2.name}}</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+</div>
+

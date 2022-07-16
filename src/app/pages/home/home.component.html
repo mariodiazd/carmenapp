@@ -1,0 +1,64 @@
+<div style="background-color: whitesmoke; height: 100%;">
+  <div class="text-center" style="margin: 10px; padding: 5px;">
+    <h1 class="mt-4" style="font-weight: 700;">BIENVENIDO A LA BATALLA POR EL CARMEN</h1>
+    </div>
+    <div class="row" style=" margin:20px;">
+      <button (click)="enableAdd()" style=" margin:20px; background-color: black;color:white;font-weight: 600;border: none;padding: 10px; margin: 5px; border-radius: 5px;">AÑADIR PARTICIPANTE</button>
+    </div>
+    <div *ngIf="add" class="row" style=" margin:20px;">
+     <input [(ngModel)]="participanteCustom.name" class="mt-2" type="text" placeholder="Nombre">
+     <input [(ngModel)]="participanteCustom.desc" class="mt-2" type="text" placeholder="Descripcion">
+     <button class="mt-2" (click)="addParticipanteCustom()" style=" margin:20px; background-color: coral;color:white;font-weight: 600;border: none;padding: 10px; margin: 5px; border-radius: 5px;">AÑADIR</button>
+    </div>
+    <div class="row">
+        <div class="col md-12">
+    <div class="d-flex justify-content-center">
+      <mat-form-field appearance="fill">
+        <mat-label>Selecciona participantes</mat-label>
+        <mat-select>
+          <div>
+
+          </div>
+
+          <mat-option style="height: 80px;" (onSelectionChange)="addParticipante(participante)"  [value]="selectedParticipante"   *ngFor="let participante of participantes"><img width="30" height="30" src="\assets\img\{{participante.img}}"> {{participante.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+    </div>
+    <div class="d-flex justify-content-center">
+      <button (click)="goToGame()" style="background-color: black;color:white;font-weight: 600;border: none;padding: 10px; margin: 5px; border-radius: 5px;">EMPEZAR EL JUEGO</button>
+      <button (click)="addAll()" style="background-color: transparent;color:black;border: 1px solid black;font-weight: 600; padding: 10px; margin: 5px; border-radius: 5px;">AÑADIR TODOS</button>
+    </div>
+
+
+        </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+
+              <div class="mt-2" *ngFor="let participante of participantesSelected;  let i = index" style="background-color: white; ; border-radius: 10px; width: 100%; height: 100px;">
+                <div class="row" style="padding: 10px;">
+                  <div class="col-md-4 col-4" >
+                    <img height="80"  src="\assets\img\{{participante.img}}">
+                  </div>
+                  <div class="col-md-6 col-6" >
+                    <div class="row">  <span class="align-middle" style="font-size: large; font-weight:700">{{ participante.name }}</span></div>
+                    <div class="row">  <span style="font-size: small;">{{participante.desc}}</span></div>
+
+
+                  </div>
+                  <div (click)="removeParticipante(i)" class="col-md-2 col-2 text-end">
+                    <span style="font-weight: 700;; font-size: 15px;">X</span>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+
